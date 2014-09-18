@@ -1,0 +1,5 @@
+<% node['apache2-global-customlog']['log-formats'].each_pair do |nickname, format| %>
+LogFormat "<%= format %>" <%= nickname %>
+<% end %>
+
+CustomLog "<%= node['apache2-global-customlog']['location'] %>" "<%= node['apache2-global-customlog']['format'] %>"
